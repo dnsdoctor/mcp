@@ -1,7 +1,7 @@
 # @dnsdoctor/mcp: DNS Doctor as a local stdio MCP server
 
 A thin MCP server that runs on your machine and calls the public
-[DNS Doctor](https://dnsdoctor.dev) REST API. It exposes the same 27 tools as the
+[DNS Doctor](https://dnsdoctor.dev) REST API. It exposes the same 29 tools as the
 hosted server at `https://dnsdoctor.dev/mcp`: scan a domain's email
 authentication (SPF, DMARC, DKIM), MX, DNS health, blacklists and domain/SSL
 expiry, check propagation, and get the exact fix record to publish.
@@ -26,7 +26,7 @@ wires the hosted server and adds the skills.
   "mcpServers": {
     "dns-doctor": {
       "command": "npx",
-      "args": ["-y", "@dnsdoctor/mcp@1.18.0"],
+      "args": ["-y", "@dnsdoctor/mcp@1.20.0"],
       "env": { "DNSDOCTOR_API_TOKEN": "dnsd_YOUR_TOKEN" }
     }
   }

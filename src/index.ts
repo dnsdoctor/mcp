@@ -91,6 +91,10 @@ const ROUTES: Record<string, Route> = {
   list_email_tests: { kind: "query", path: "/api/v1/email-tests" },
   // The account's domains with state + next step (token, monitoring:read).
   list_my_domains: { kind: "query", path: "/api/v1/domains/mine" },
+  // Start one record watch; its single email goes to the token's account.
+  watch_record_change: { kind: "json", path: "/api/v1/change-watch" },
+  // Which candidate names are already registered (1-20, anonymous).
+  check_domain_names: { kind: "json", path: "/api/tools/check-names" },
 };
 
 /** Default upload name when the caller supplies none — the API only reads bytes. */
