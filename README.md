@@ -1,5 +1,7 @@
 # @dnsdoctor/mcp: DNS Doctor as a local stdio MCP server
 
+[![mcptry](https://mcptry.com/badge/dev.dnsdoctor/dns-doctor)](https://mcptry.com/servers/dev.dnsdoctor/dns-doctor)
+
 A thin MCP server that runs on your machine and calls the public
 [DNS Doctor](https://dnsdoctor.dev) REST API. It exposes the same 29 tools as the
 hosted server at `https://dnsdoctor.dev/mcp`: scan a domain's email
