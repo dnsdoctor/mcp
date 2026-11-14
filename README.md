@@ -28,7 +28,7 @@ wires the hosted server and adds the skills.
   "mcpServers": {
     "dns-doctor": {
       "command": "npx",
-      "args": ["-y", "@dnsdoctor/mcp@1.21.0"],
+      "args": ["-y", "@dnsdoctor/mcp@1.21.1"],
       "env": { "DNSDOCTOR_API_TOKEN": "dnsd_YOUR_TOKEN" }
     }
   }
