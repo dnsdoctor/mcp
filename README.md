@@ -1,6 +1,6 @@
 # @dnsdoctor/mcp: DNS Doctor as a local stdio MCP server
 
-[![mcptry](https://mcptry.com/badge/dev.dnsdoctor/dns-doctor)](https://mcptry.com/servers/dev.dnsdoctor/dns-doctor) [![DNS Doctor MCP server – quality and maintenance score on Glama](https://glama.ai/mcp/servers/dnsdoctor/mcp/badges/score.svg)](https://glama.ai/mcp/servers/dnsdoctor/mcp) [![mcp.market](https://mcp.market/badge/dnsdoctor-dns-doctor.svg)](https://mcp.market/server/dnsdoctor-dns-doctor)
+[![mcptry](https://mcptry.com/badge/dev.dnsdoctor/dns-doctor)](https://mcptry.com/servers/dev.dnsdoctor/dns-doctor) [![DNS Doctor MCP server – quality and maintenance score on Glama](https://glama.ai/mcp/servers/dnsdoctor/mcp/badges/score.svg)](https://glama.ai/mcp/servers/dnsdoctor/mcp) [![mcp.market](https://mcp.market/badge/dnsdoctor-dns-doctor.svg)](https://mcp.market/server/dnsdoctor-dns-doctor) [![npm](https://img.shields.io/npm/v/@dnsdoctor/mcp)](https://www.npmjs.com/package/@dnsdoctor/mcp) [![npm downloads](https://img.shields.io/npm/dm/@dnsdoctor/mcp)](https://www.npmjs.com/package/@dnsdoctor/mcp)
 
 A thin MCP server that runs on your machine and calls the public
 [DNS Doctor](https://dnsdoctor.dev) REST API. It exposes the same 29 tools as the
