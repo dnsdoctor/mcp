@@ -33,7 +33,7 @@ verbatim.
   "mcpServers": {
     "dns-doctor": {
       "command": "npx",
-      "args": ["-y", "@dnsdoctor/mcp@1.21.1"]
+      "args": ["-y", "@dnsdoctor/mcp@1.21.3"]
     }
   }
 }
