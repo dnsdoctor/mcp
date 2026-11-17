@@ -1,18 +1,48 @@
-# @dnsdoctor/mcp: DNS Doctor as a local stdio MCP server
+# DNS Doctor: get your domain's email working, and know it stays that way
 
 [![mcptry](https://mcptry.com/badge/dev.dnsdoctor/dns-doctor)](https://mcptry.com/servers/dev.dnsdoctor/dns-doctor) [![DNS Doctor MCP server – quality and maintenance score on Glama](https://glama.ai/mcp/servers/dnsdoctor/mcp/badges/score.svg)](https://glama.ai/mcp/servers/dnsdoctor/mcp) [![mcp.market](https://mcp.market/badge/dnsdoctor-dns-doctor.svg)](https://mcp.market/server/dnsdoctor-dns-doctor) [![npm](https://img.shields.io/npm/v/@dnsdoctor/mcp)](https://www.npmjs.com/package/@dnsdoctor/mcp) [![npm downloads](https://img.shields.io/npm/dm/@dnsdoctor/mcp)](https://www.npmjs.com/package/@dnsdoctor/mcp) [![DNS Doctor MCP on mcprush](https://mcprush.com/badge/dns-doctor-mcp/score.svg)](https://mcprush.com/to/dns-doctor-mcp?ref=badge)
 
-A thin MCP server that runs on your machine and calls the public
-[DNS Doctor](https://dnsdoctor.dev) REST API. It exposes the same 29 tools as the
-hosted server at `https://dnsdoctor.dev/mcp`: scan a domain's email
-authentication (SPF, DMARC, DKIM), MX, DNS health, blacklists and domain/SSL
-expiry, check propagation, and get the exact fix record to publish.
+See why mail lands in spam, get the exact DNS record to fix it, and check the change
+is live everywhere.
 
-It holds no diagnosis logic of its own and relays every record string verbatim.
-Every fix record comes from DNS Doctor's deterministic engine, never from a model
-guess.
+DNS Doctor checks a domain's email setup (SPF, DKIM, DMARC), mail routing, DNS
+health, blacklists and domain/SSL expiry, and tells your AI assistant what is
+wrong in plain words. When a record needs fixing it returns the exact record to
+copy and paste. That record comes from a validating engine, never from a model
+guess, and nothing is ever changed in your DNS for you.
 
-Most clients should use the hosted server instead (no install, no keys):
+Scanning and fixes are free: no account, no key, no card.
+
+## Ask your assistant
+
+- "Why do emails from example.com land in spam?"
+- "Check SPF, DKIM and DMARC for example.com and give me the record to fix what fails."
+- "I just changed my MX records. Is the change live everywhere yet?"
+- "Is example.com on any blacklist, and when do its domain and SSL certificate expire?"
+- "Is it safe to move example.com from p=none to p=quarantine?"
+
+## Install
+
+This package runs on your machine and calls the public
+[DNS Doctor](https://dnsdoctor.dev) API. It has the same 29 tools as the hosted
+server and holds no diagnosis logic of its own: every record string is relayed
+verbatim.
+
+```json
+{
+  "mcpServers": {
+    "dns-doctor": {
+      "command": "npx",
+      "args": ["-y", "@dnsdoctor/mcp@1.21.1"]
+    }
+  }
+}
+```
+
+Node 20 or newer. Pin the version as shown, so the code you run is the code you
+reviewed.
+
+If your client supports remote servers, the hosted one needs no install at all:
 
 ```json
 { "mcpServers": { "dns-doctor": { "type": "http", "url": "https://dnsdoctor.dev/mcp" } } }
@@ -21,22 +51,18 @@ Most clients should use the hosted server instead (no install, no keys):
 For Claude Code, the [DNS Doctor plugin](https://github.com/dnsdoctor/claude-plugin)
 wires the hosted server and adds the skills.
 
-## Run it
+## Monitoring (optional)
+
+A scan is a snapshot. [Monitoring](https://dnsdoctor.dev/pricing) watches your
+domains every day, reads your DMARC reports, emails you when something breaks
+and tells you when it is safe to tighten DMARC. With an account, your assistant
+can also list your monitored domains, alerts and readiness.
+
+Add a token to use the account tools:
 
 ```json
-{
-  "mcpServers": {
-    "dns-doctor": {
-      "command": "npx",
-      "args": ["-y", "@dnsdoctor/mcp@1.21.1"],
-      "env": { "DNSDOCTOR_API_TOKEN": "dnsd_YOUR_TOKEN" }
-    }
-  }
-}
+"env": { "DNSDOCTOR_API_TOKEN": "dnsd_YOUR_TOKEN" }
 ```
-
-Node 20 or newer. Pin the version as shown, so the code you run is the code you
-reviewed.
 
 - `DNSDOCTOR_API_TOKEN` is optional. Anonymous access covers scanning and fixes;
   the account tools (monitored domains, alerts, readiness, lookalike watches,
