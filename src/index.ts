@@ -95,6 +95,8 @@ const ROUTES: Record<string, Route> = {
   watch_record_change: { kind: "json", path: "/api/v1/change-watch" },
   // Which candidate names are already registered (1-20, anonymous).
   check_domain_names: { kind: "json", path: "/api/tools/check-names" },
+  // Record interest in the mailbox for agents (preview); nothing is created or sent.
+  join_agent_mailbox_waitlist: { kind: "json", path: "/api/agent-mailbox/waitlist" },
 };
 
 /** Default upload name when the caller supplies none — the API only reads bytes. */

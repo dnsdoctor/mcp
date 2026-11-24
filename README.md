@@ -24,7 +24,7 @@ Scanning and fixes are free: no account, no key, no card.
 ## Install
 
 This package runs on your machine and calls the public
-[DNS Doctor](https://dnsdoctor.dev) API. It has the same 29 tools as the hosted
+[DNS Doctor](https://dnsdoctor.dev) API. It has the same 30 tools as the hosted
 server and holds no diagnosis logic of its own: every record string is relayed
 verbatim.
 
@@ -33,7 +33,7 @@ verbatim.
   "mcpServers": {
     "dns-doctor": {
       "command": "npx",
-      "args": ["-y", "@dnsdoctor/mcp@1.22.0"]
+      "args": ["-y", "@dnsdoctor/mcp@1.23.0"]
     }
   }
 }
